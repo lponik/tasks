@@ -18,11 +18,11 @@ function App(): JSX.Element {
                 </p>
 
                 <img
-                    src={require("/Users/loganponik/tasks/src/images/dog.jpeg")}
+                    src={require("./images/dog.jpeg")}
                     alt="A picture of a dog"
                 ></img>
             </div>
-            {/* Add a list with at least 3 elements.*/}
+            {/* Add a list with at least 3 elements*/}
             <div>
                 <br></br>
                 Unordered List:
