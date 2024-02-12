@@ -22,7 +22,7 @@ function App(): JSX.Element {
                     alt="A picture of a dog"
                 ></img>
             </div>
-            {/* Add a list with at least 3 elements*/}
+            {/* Add a list with at least 3 elements.*/}
             <div>
                 <br></br>
                 Unordered List:
