@@ -44,7 +44,7 @@ function App(): JSX.Element {
             </div>
             {/* Change backround color of header area, (changed to green through the .css file) */}
             {/* Have a two column layout, put a red filled rectangle in each column using a div tag with
-            width, height, and backroundColor styles.) */}
+            width, height, and backroundColor styles.)  Passes the 2 tests at the bottom.*/}
             <div>
                 <Container>
                     <Row>
