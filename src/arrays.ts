@@ -9,13 +9,12 @@ export function bookEndList(numbers: number[]): number[] {
     // checks if array is empty
     if (numbers.length === 0) {
         return [];
-    }
-    // checks if array has 1 element, list number twice in new list
-    else if (numbers.length === 1) {
+        // checks if array has 1 element, list number twice in new list
+    } else if (numbers.length === 1) {
         return numbers.concat(numbers);
-    }
-    // return new array containing just first and last number
-    else {
+
+        // return new array containing just first and last number
+    } else {
         arr[0] = numbers[0];
         arr[1] = numbers[numbers.length - 1];
         return arr;
