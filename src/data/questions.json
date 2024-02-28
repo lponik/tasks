@@ -73,7 +73,7 @@
             "published": false
         }
     ],
-<<<<<<< solved-nested
+
     "TRIVIA_QUESTIONS": [
         {
             "id": 1,
@@ -222,5 +222,5 @@
     "SIMPLE_QUESTIONS_2": [],
     "EMPTY_QUESTIONS": [],
     "TRIVIA_QUESTIONS": []
->>>>>>> main
+
 }
