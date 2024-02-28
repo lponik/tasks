@@ -145,14 +145,9 @@ export function publishAll(questions: Question[]): Question[] {
  */
 export function sameType(questions: Question[]): boolean {
     if (questions.length === 0) return true;
-
-    const test_type = questions[0].type;
-    return questions.reduce(
-        (acc, question) => acc && question.type === test_type,
-        true
-    );
+    const testType = questions[0].type;
+    return questions.every((question) => question.type === testType);
 }
-
 /***
  * Consumes an array of Questions and produces a new array of the same Questions,
  * except that a blank question has been added onto the end. Reuse the `makeBlankQuestion`
