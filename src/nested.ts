@@ -2,49 +2,6 @@ import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 import { makeBlankQuestion } from "./objects";
 
-const testQuestion: Question[] = [
-    {
-        id: 1,
-        name: "Addition",
-        body: "What is 2+2?",
-        type: "short_answer_question",
-        options: [],
-        expected: "4",
-        points: 1,
-        published: true
-    },
-    {
-        id: 2,
-        name: "Letters",
-        body: "What is the last letter of the English alphabet?",
-        type: "short_answer_question",
-        options: [],
-        expected: "Z",
-        points: 1,
-        published: false
-    },
-    {
-        id: 5,
-        name: "Colors",
-        body: "Which of these is a color?",
-        type: "multiple_choice_question",
-        options: ["red", "apple", "firetruck"],
-        expected: "red",
-        points: 1,
-        published: true
-    },
-    {
-        id: 9,
-        name: "Shapes",
-        body: "",
-        type: "multiple_choice_question",
-        options: [],
-        expected: "",
-        points: 2,
-        published: false
-    }
-];
-
 /**
  * Consumes an array of questions and returns a new array with only the questions
  * that are `published`.
@@ -280,7 +237,7 @@ export function editOption(
     return questions.map((question) => {
         if (question.id === targetId) {
             // so we aren't modifiyng OG array
-            let newOptions = [...question.options];
+            const newOptions = [...question.options];
             if (targetOptionIndex === -1) {
                 newOptions.push(newOption);
             } else {
@@ -307,7 +264,7 @@ export function duplicateQuestionInArray(
         acc.push(question);
 
         if (question.id === targetId) {
-            let duplicate = duplicateQuestion(newId, question);
+            const duplicate = duplicateQuestion(newId, question);
             acc.push(duplicate);
         }
 
