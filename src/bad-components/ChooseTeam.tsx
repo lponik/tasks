@@ -11,32 +11,32 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
-        /*
+    // Function to handle adding a new member to the team
+    const chooseMember = (newMember: string) => {
         if (!team.includes(newMember)) {
-            team.push(newMember);
+            setTeam([...team, newMember]); // Use spread operator to create a new array with the new member added
         }
-        */
-    }
+    };
 
-    function clearTeam() {
-        /*
-        team = [];
-        */
-    }
+    // Function to clear the team list
+    const clearTeam = () => {
+        setTeam([]); // Set the team array to an empty array
+    };
 
     return (
         <div>
             <h3>Choose Team</h3>
             <Row>
                 <Col>
-                    {allOptions.map((option: string) => (
+                    {PEOPLE.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            <Button
+                                onClick={() => chooseMember(option)}
+                                size="sm"
+                            >
                                 {option}
                             </Button>
                         </div>
@@ -44,9 +44,11 @@ export function ChooseTeam(): JSX.Element {
                 </Col>
                 <Col>
                     <strong>Team:</strong>
-                    {team.map((member: string) => (
-                        <li key={member}>{member}</li>
-                    ))}
+                    <ul>
+                        {team.map((member: string) => (
+                            <li key={member}>{member}</li>
+                        ))}
+                    </ul>
                     <Button onClick={clearTeam}>Clear Team</Button>
                 </Col>
             </Row>
