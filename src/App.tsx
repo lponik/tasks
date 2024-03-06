@@ -1,6 +1,12 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): JSX.Element {
     return (
@@ -8,73 +14,18 @@ function App(): JSX.Element {
             <header className="App-header">
                 Logan Ponik - UD CISC275 with React Hooks and TypeScript
             </header>
-            {/* Add a header*/}
-            <h1>This is a header</h1>
-            {/* Add an image with alt text*/}
-            <div>
-                <p>
-                    <br></br>
-                    Picture of a dog
-                </p>
-
-                <img
-                    src={require("./images/dog.jpeg")}
-                    alt="A picture of a dog"
-                ></img>
-            </div>
-            {/* Add a list with at least 3 elements*/}
-            <div>
-                <br></br>
-                Unordered List:
-                <ul>
-                    <li> First </li>
-                    <li>Another thing</li>
-                    <li>A third item</li>
-                </ul>
-            </div>
-            <div>
-                This is <span style={{ color: "red" }}>colored text</span>.
-            </div>
-            {/* Add a bootstrap button with the text Log Hello World 
-            and make the button log "Hello World! when clicked */}
-            <div>
-                <Button onClick={() => console.log("Hello World!")}>
-                    Log Hello World
-                </Button>
-            </div>
-            {/* Change backround color of header area, (changed to green through the .css file) */}
-            {/* Have a two column layout, put a red filled rectangle in each column using a div tag with
-            width, height, and backroundColor styles.)  Passes the 2 tests at the bottom.*/}
-            <div>
-                <Container>
-                    <Row>
-                        <Col>
-                            First column.
-                            <div
-                                style={{
-                                    width: "300px",
-                                    height: "100px",
-                                    backgroundColor: "red"
-                                }}
-                            ></div>
-                        </Col>
-                        <Col>
-                            Second column.
-                            <div
-                                style={{
-                                    width: "300px",
-                                    height: "100px",
-                                    backgroundColor: "red"
-                                }}
-                            ></div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
